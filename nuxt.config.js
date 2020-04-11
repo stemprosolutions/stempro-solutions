@@ -1,6 +1,15 @@
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/<repository-name>/'
+  }
+} : {}
 
 export default {
   mode: 'universal',
+
+  // NOTE: for Github pages
+  ...routerBase,
+
   /*
   ** Headers of the page
   */
@@ -12,7 +21,8 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', type: 'css', href: 'https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap'}
     ]
   },
   /*
