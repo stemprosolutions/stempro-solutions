@@ -1,14 +1,5 @@
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/stempro-solutions/'
-  }
-} : {}
-
 export default {
   mode: 'universal',
-
-  // NOTE: for Github pages
-  ...routerBase,
 
   /*
   ** Headers of the page
